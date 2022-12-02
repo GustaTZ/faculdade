@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+
+		<style>
+
+			table, td, th{
+				border: 1px solid black;
+				border-spacing: 0px;
+			}
+
+			td,th{
+				padding-left: 10px;	
+				padding-right: 10px;	
+				padding-top: 5px;	
+			}
+
+			th{
+				background-color: blue;
+				color: white;
+			}
+			
+
+		</style>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+		<script type="text/javascript">
+
+
+			function inserir(){
+
+				var nome  = document.getElementById("nome").value;
+				var idade = document.getElementById("idade").value;
+
+				var json = {};
+				json.acao = "insert";
+				json.ra   = "";
+				json.nome = nome;
+				json.idade = idade;
+
+				$.ajax({
+					url: "usuario_dao.php",
+					data: json,
+					type: "GET",
+					success: function(resp){
+						var j = JSON.parse(resp);
+						alert(j.resultado);
+					}
+				});
+
+			}
+
+
+			function excluir(ra){
+				alert("Excluindo o ra número " + ra);
+			}
+
+
+			function editar(ra, nome, idade){
+				document.getElementById("ra").value   = ra;
+				document.getElementById("nome").value = nome;
+				document.getElementById("idade").value = idade;
+			}
+
+			function consultarBancoDeDados(){
+
+				var banco = [   
+					{"ra":"123", "nome":"maria", "idade":34}, 
+					{"ra":"456", "nome":"joao","idade":56},
+					{"ra":"789", "nome":"ana","idade":32}
+				];
+
+				var ultimoIndice = banco.length-1;
+
+				var linhas = "";
+
+				for (indice=0;indice<=ultimoIndice;indice++){
+					linhas += `
+						<tr>
+							<td><img src="imagens/excluir.png" onClick="excluir('${banco[indice].ra}')"/></td>
+							<td><img src="imagens/editar.png" onClick="editar('${banco[indice].ra}','${banco[indice].nome}','${banco[indice].idade}')"/></td>
+							<td>${banco[indice].ra}</td>
+							<td>${banco[indice].nome}</td>
+							<td>${banco[indice].idade}</td>
+						</tr>`;
+				}
+
+				document.getElementById("corpoTabela").innerHTML = linhas;				
+
+			}
+
+		</script>
+
+	</head>
+
+	<body>
+		<form action="usuario_dao.php" method="get">
+
+			<label for="ra">  RA......:</label><input id="ra" name="ra" type="text"/><br>
+			<label for="nome">NOME....:</label><input id="nome" name="nome" type="text"/><br>
+			<label for="idade">IDADE..:</label><input id="idade" name="idade" type="text"/><br><br><br>
+
+			<input type="hidden" name="acao" value="insert"/>
+
+			<input type="button" value="Consultar" onClick="consultarBancoDeDados()"/>
+			<input type="reset" value="limpar"/>
+
+			<input type="button" value="Salvar" onClick="inserir()"/>
+
+			<input type="submit" value="Salvar sem AJAX"/>
+
+		</form>
+
+		<br><br>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Excluir</th>
+					<th>Editar</th>
+					<th>RA</th>
+					<th>NOME</th>
+					<th>IDADE</th>
+				</tr>
+			</thead>
+			<tbody id="corpoTabela">
+
+			</tbody>
+		</table>
+
+	</body>
+</html>
+
+
+

@@ -1,0 +1,6 @@
+HTML, CSS E JAVASCRIPT
+
+
+https://www.w3schools.com/cssref/pr_background-repeat.asp
+
+https://www.w3schools.com/cssref/playdemo.asp?filename=playcss_background-position&preval=50px%20100px

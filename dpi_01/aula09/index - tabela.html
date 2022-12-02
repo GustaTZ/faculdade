@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+			table, th, td {
+				border: 1px solid black;
+			}
+			th, td{
+				padding-left: 20px;
+				padding-right: 20px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				text-align: center;
+			}
+			thead{
+				background-color: blue;
+				color: white;
+			}
+			tr:nth-child(even)
+	        {
+	            background-color: #EEE;
+	        }
+
+
+		</style>
+	</head>
+	<body>
+
+		<table>
+			<thead>
+				<tr><th>ra</th><th>nome</th><th>idade</th></tr>
+			</thead>	
+			<tbody>
+				<tr><td>123</td><td>maria</td><td>34</td></tr>
+				<tr><td>456</td><td>joao</td><td>45</td></tr>
+				<tr><td>678</td><td>antonio</td><td>37</td></tr>
+			</tbody>	
+		</table>	
+
+		<br><br><br>
+		<h3>Mesclando colunas</h3>
+
+		<table>
+			<thead>
+				<tr><th>ra</th><th colspan="2">nome</th></tr>
+			</thead>	
+			<tbody>
+				<tr><td>123</td><td>maria</td><td>34</td></tr>
+				<tr><td>456</td><td>joao</td><td>45</td></tr>
+				<tr><td>678</td><td>antonio</td><td>37</td></tr>
+			</tbody>	
+		</table>
+
+		<br><br><br>
+
+		<h3>Mesclando linhas</h3>
+
+		<table>
+			<thead>
+				<tr><th>ra</th><th>nome</th><th>idade</th></tr>
+			</thead>	
+			<tbody>
+				<tr><td>123</td><td>maria</td><td rowspan="2">34</td></tr>
+				<tr><td>456</td><td>joao</td></tr>
+				<tr><td>678</td><td>antonio</td><td>37</td></tr>
+			</tbody>	
+		</table>	
+
+
+	</body>
+</html>

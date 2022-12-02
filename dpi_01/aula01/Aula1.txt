@@ -1,0 +1,26 @@
+Desktop, web, mobile (jogos digitais)
+
+Linguagem de programação para desenvolvimento de sistemas
+- C, C#, Java, Java Script, Python, PHP, Asp.NET
+
+Java - Desktop, web, mobile
+Java Script - web, mobile(framework, app híbridos)
+
+Banco de dados
+- Modelagem de banco dados
+- Linguagem SQL
+
+-------------------------------------
+
+- Engenharia de software (Teste de software, Projeto de software)
+
+-------------------------------------
+
+- Banco de dados (DBA, especialistas em recuperação de desastres)
+
+-------------------------------------
+- Redes de computadores
+
+- Segurança da informação
+
+

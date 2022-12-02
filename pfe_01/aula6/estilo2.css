@@ -1,0 +1,11 @@
+#tb1{
+    width: 500px;
+    border: 1px solid blue;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+td,th{
+    border: 1px solid blue;
+    text-align: center;
+}
